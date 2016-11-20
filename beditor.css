@@ -1,0 +1,36 @@
+.b_h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.b_toolbar {
+  position: absolute;
+  height: 32px;
+  box-shadow: 0 0 0 1px #000,0 8px 16px rgba(27,39,51,0.16);
+  border-radius: 2px;
+  color: rgb(193, 199, 205);
+  background: #1b2733;
+  user-select: none;
+}
+.b_toolbar span {
+  display: inline-block;
+  height: 100%;
+  line-height: 32px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+.b_toolbar span:hover {
+  color: #fff;
+}
+.b_input {
+  position: absolute;
+  padding: 5px 0.5em;;
+  width: 200px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(27,39,51,0.26);
+  line-height: 25px;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  color: #999;
+}
