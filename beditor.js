@@ -154,7 +154,6 @@
     function callToolbar() {
       $document.on('keydown', '.beditor', function(e) {
         if (e.keyCode === 73 && e.ctrlKey) {
-
           showToolbar()
         }
       })
@@ -240,6 +239,8 @@
   function listenToolbarAction() {
     $document.on('click', '.b_toolbar span', function(e) {
 
+      e.stopPropagation()
+
       var action = $(this).attr('name')
 
       switch (action) {
@@ -323,8 +324,14 @@
 
   // 失焦，退出 input 弹窗
   function listenInput() {
+    var $b_input = $document.find('.b_input')
+
     $document.on('blur', '.b_input', function() {
-      if (!$document.find('.b_input').is(':hidden')) $('.b_input').fadeOut().val('')
+      if (!$b_input.is(':hidden')) $('.b_input').fadeOut().val('')
+    })
+
+    $document.on('click', function() {
+      if (!$('.b_input').is(':hidden') && !$('.b_input').is(':focus')) $('.b_input').fadeOut().val('')
     })
   }
 
